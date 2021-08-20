@@ -63,4 +63,22 @@ document.getElementById('paid-delivery').addEventListener('click', function () {
     Total('total')
 })
 //apply button
-// document.getElementById()
+document.getElementById('btn-apply').addEventListener('click', function () {
+    const GetTotal = document.getElementById('total');
+    let total = GetTotal.innerText;
+    // console.log(total);
+    const getCdoe = document.getElementById('pomo-code');
+    const code = getCdoe.value;
+    // console.log(code);
+    let newTotal = 0;
+    if (code == 'stevekaku') {
+        newTotal = total * 0.2;
+    }
+    else {
+        newTotal = total * 1;
+    }
+    total = total - newTotal;
+    GetTotal.innerText = total;
+    getCdoe.value = '';
+
+})
